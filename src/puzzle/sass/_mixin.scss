@@ -1,0 +1,35 @@
+@use 'variable' as var;
+
+@mixin header($color) {
+  width: 400px;
+  height: 100px;
+  background-color: $color;
+}
+
+@mixin sidebar($color) {
+  width: 150px;
+  height: 250px;
+  background-color: $color ;
+}
+
+@mixin btn() {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+}
+
+@mixin main-btn() {
+  width: 140px;
+  height: 40px;
+  background-color: black;
+}
+
+@mixin assignBtnColor() {
+  @each $className in var.$classNames {
+    $index_key : index(var.$classNames, $className);
+
+    &.#{$className} {
+      background-color: nth(var.$buttonColor, $index_key);
+    }
+  }
+}

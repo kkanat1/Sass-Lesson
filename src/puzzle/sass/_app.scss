@@ -1,0 +1,56 @@
+@use 'variable' as var;
+@use 'mixin' as mix;
+
+.header {
+  @include mix.header(var.$navy);
+  box-sizing: border-box;
+  padding: 20px 20px 0 0;
+
+  &__container {
+    width: fit-content;
+    margin-left: auto;
+    padding: 10px 10px;
+    display: flex;
+    background-color: var.$white;
+
+    &__item {
+      @include mix.btn();
+      margin-right: 10px;
+      @include mix.assignBtnColor();
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.main-container {
+  display: flex;
+}
+
+aside {
+  @include mix.sidebar(var.$green);
+}
+
+.main {
+  @include mix.sidebar(var.$red);
+  width: 250px;
+  box-sizing: border-box;
+  padding: 40px 0 0 40px;
+
+  &__box {
+    @include mix.main-btn();
+    border: 5px solid var.$white;
+    margin-bottom: 10px;
+    @include mix.assignBtnColor();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+footer {
+  @include mix.header(var.$brown);
+}
