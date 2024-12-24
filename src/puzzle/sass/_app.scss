@@ -11,11 +11,12 @@
     margin-left: auto;
     padding: 10px 10px;
     display: flex;
-    background-color: white;
+    background-color: var.$white;
 
     &__item {
       @include mix.btn();
       margin-right: 10px;
+      @include mix.assignBtnColor();
 
       &:last-child {
         margin-right: 0;
@@ -38,10 +39,11 @@ aside {
   box-sizing: border-box;
   padding: 40px 0 0 40px;
 
-  &-box {
+  &__box {
     @include mix.main-btn();
     border: 5px solid var.$white;
     margin-bottom: 10px;
+    @include mix.assignBtnColor();
 
     &:last-child {
       margin-bottom: 0;
