@@ -1,0 +1,22 @@
+@use 'variable' as var;
+@use 'mixin' as mix;
+
+header {
+  @include mix.header(var.$navy);
+}
+
+.main-container {
+  display: flex;
+}
+aside {
+  @include mix.sidebar(var.$green);
+}
+
+main {
+  @include mix.sidebar(var.$red);
+  width: 250px;
+}
+
+footer {
+  @include mix.header(var.$brown);
+}

@@ -1,0 +1,11 @@
+@mixin header($color) {
+  width: 400px;
+  height: 100px;
+  background-color:$color ;
+}
+
+@mixin sidebar($color){
+  width: 150px;
+  height: 250px;
+  background-color:$color ;
+}
